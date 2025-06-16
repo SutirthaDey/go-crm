@@ -1,3 +1,5 @@
+import Sidebar from "@/components/sidebar";
+import { inter } from "@/ui/fonts";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +9,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <div className="grid grid-rows-[auto_1fr] h-screen sm:grid-cols-[256px_1fr] sm:grid-rows-[auto_1fr]">
+          <div className="bg-yellow-200 sm:row-start-1 sm:col-start-1 sm:row-span-2 sm:block hidden">
+            <Sidebar />
+          </div>
+
+          <div className="bg-red-100 min-h-14 sm:min-h-20 sm:row-start-1 sm:col-start-2 sm:row-span-1">
+            Header
+          </div>
+
+          <main className="sm:row-start-2 sm:col-start-2 sm:row-span-1 overflow-y-auto p-4">
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   );
 }
