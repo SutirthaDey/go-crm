@@ -1,6 +1,7 @@
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/Sidebar";
 import { inter } from "@/ui/fonts";
 import "./globals.css";
+import Header from "@/components/Header";
 
 export default function RootLayout({
   children,
@@ -15,8 +16,8 @@ export default function RootLayout({
             <Sidebar />
           </div>
 
-          <div className="bg-red-100 min-h-14 sm:min-h-20 sm:row-start-1 sm:col-start-2 sm:row-span-1">
-            Header
+          <div className="min-h-[70px] sm:min-h-[76px] sm:row-start-1 sm:col-start-2 sm:row-span-1 shadow-sm">
+            <Header />
           </div>
 
           <main className="sm:row-start-2 sm:col-start-2 sm:row-span-1 overflow-y-auto p-4">
