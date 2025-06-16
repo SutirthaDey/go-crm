@@ -3,6 +3,7 @@ import ClosedDeals from "@/components/dashboard/ClosedDeals";
 import EstProfit from "@/components/dashboard/EstProfit";
 import EstRevenue from "@/components/dashboard/EstRevenue";
 import NewDeals from "@/components/dashboard/NewDeals";
+import DoughnutChart from "@/components/dashboard/charts/DoughnutChart";
 import { epilogue } from "@/ui/fonts";
 export default function Dashboard() {
   return (
@@ -34,7 +35,9 @@ export default function Dashboard() {
         <FunnelChart />
       </div>
 
-      <div className="md:row-start-3 md:col-start-3 md:col-span-2 bg-green-200"></div>
+      <div className="md:row-start-3 md:col-start-3 md:col-span-2">
+        <DoughnutChart />
+      </div>
 
       <div className="md:row-start-4 md:col-start-1 md:col-span-4 bg-green-200"></div>
 
