@@ -1,3 +1,4 @@
+import FunnelChart from "@/components/dashboard/charts/FunnelChart";
 import ClosedDeals from "@/components/dashboard/ClosedDeals";
 import EstProfit from "@/components/dashboard/EstProfit";
 import EstRevenue from "@/components/dashboard/EstRevenue";
@@ -29,7 +30,9 @@ export default function Dashboard() {
         <EstProfit />
       </div>
 
-      <div className="md:row-start-3 md:col-start-1 md:col-span-2 bg-green-200"></div>
+      <div className="md:row-start-3 md:col-start-1 md:col-span-2 border-1 border-solid border-[#F3F4F6FF] rounded-sm">
+        <FunnelChart />
+      </div>
 
       <div className="md:row-start-3 md:col-start-3 md:col-span-2 bg-green-200"></div>
 
