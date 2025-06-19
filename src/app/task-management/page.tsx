@@ -1,7 +1,7 @@
 export default function TaskManagement() {
   return (
     <div>
-      <p>Welcome To TaskManagement!</p>
+      <p>Welcome To Task Management!</p>
     </div>
   );
 }
