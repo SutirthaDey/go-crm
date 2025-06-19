@@ -43,9 +43,7 @@ const data = {
 const options = {
   responsive: true,
   plugins: {
-    legend: {
-      position: "top" as const,
-    },
+    legend: false,
     tooltip: {
       callbacks: {
         label: (context: any) => {
@@ -115,7 +113,7 @@ export default function RevenueVsLeadsByDateChart() {
           Revenue vs Leads
         </h2>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center max-h-[450px]">
         <Bar data={data} options={options} height={250} width={710} />
       </div>
     </div>

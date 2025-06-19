@@ -6,6 +6,7 @@ import NewDeals from "@/components/dashboard/NewDeals";
 import DoughnutChart from "@/components/dashboard/charts/DoughnutChart";
 import { epilogue } from "@/ui/fonts";
 import ComparisonBarChart from "@/components/dashboard/charts/ComparisonBarChart";
+import { LineGraph } from "@/components/dashboard/charts/LineGraph";
 export default function Dashboard() {
   return (
     <div className=" grid grid-cols-1 grid-rows-[repeat(9,auto)] md:grid-cols-4 md:grid-rows-[78px_122px_338px_565px_418px] gap-8 p-4">
@@ -44,7 +45,9 @@ export default function Dashboard() {
         <ComparisonBarChart />
       </div>
 
-      <div className="md:row-start-5 md:col-start-1 md:col-span-2 bg-green-200"></div>
+      <div className="md:row-start-5 md:col-start-1 md:col-span-2 border-1 border-solid border-[#F3F4F6FF] rounded-sm">
+        <LineGraph />
+      </div>
 
       <div className="md:row-start-5 md:col-start-3 md:col-span-2 bg-green-200"></div>
     </div>
