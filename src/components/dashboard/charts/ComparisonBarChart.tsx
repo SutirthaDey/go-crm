@@ -8,6 +8,8 @@ import {
   LinearScale,
   Tooltip,
   Legend,
+  TooltipItem,
+  ChartOptions,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
@@ -40,17 +42,19 @@ const data = {
   ],
 };
 
-const options = {
+const options: ChartOptions<"bar"> = {
   responsive: true,
   plugins: {
-    legend: false,
+    legend: {
+      display: false,
+    },
     tooltip: {
       callbacks: {
-        label: (context: any) => {
-          const label = context.dataset.label;
+        label: (context: TooltipItem<"bar">) => {
+          const label = context.dataset.label || "";
           const value = context.raw;
           return label === "Revenue ($)"
-            ? `${label}: $${value.toLocaleString()}`
+            ? `${label}: $${Number(value).toLocaleString()}`
             : `${label}: ${value} leads`;
         },
       },
@@ -76,9 +80,10 @@ const options = {
         },
       },
       ticks: {
-        stepSize: undefined, // Let Chart.js calculate
-        maxTicksLimit: 5, // <-- Limit to at most 5 Y-ticks
-        callback: (value: number) => `$${value}`, // for revenue
+        maxTicksLimit: 5,
+        callback: function (this, value: number | string) {
+          return `$${value}`;
+        },
       },
     },
     "y-leads": {
@@ -95,9 +100,10 @@ const options = {
         },
       },
       ticks: {
-        stepSize: undefined,
         maxTicksLimit: 5,
-        callback: (value: number) => `${value} leads`,
+        callback: function (this, value: number | string) {
+          return `${value} leads`;
+        },
       },
     },
   },
