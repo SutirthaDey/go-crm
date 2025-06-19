@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartOptions,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { epilogue } from "@/ui/fonts";
@@ -24,17 +25,21 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
+export const options: ChartOptions<"line"> = {
   responsive: true,
   plugins: {
-    legend: false,
-    title: false,
+    legend: {
+      display: false,
+    },
+    title: {
+      display: false,
+    },
   },
   scales: {
     y: {
       ticks: {
         padding: 15, // ✅ adds space between labels and graph
-        callback: function (value) {
+        callback: function (value: number | string) {
           return `$${value.toLocaleString()}`;
         },
       },
