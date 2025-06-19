@@ -5,9 +5,10 @@ import EstRevenue from "@/components/dashboard/EstRevenue";
 import NewDeals from "@/components/dashboard/NewDeals";
 import DoughnutChart from "@/components/dashboard/charts/DoughnutChart";
 import { epilogue } from "@/ui/fonts";
+import ComparisonBarChart from "@/components/dashboard/charts/ComparisonBarChart";
 export default function Dashboard() {
   return (
-    <div className=" grid grid-cols-1 grid-rows-[repeat(9,auto)] md:grid-cols-4 md:grid-rows-[78px_122px_338px_553px_418px] gap-8 p-4">
+    <div className=" grid grid-cols-1 grid-rows-[repeat(9,auto)] md:grid-cols-4 md:grid-rows-[78px_122px_338px_565px_418px] gap-8 p-4">
       <div className="md:row-start-1 md:col-start-1 md:col-span-4">
         <p
           className={`${epilogue.className} antialiased text-3xl leading-12 font-[800] text-[#171A1FFF]`}
@@ -35,11 +36,13 @@ export default function Dashboard() {
         <FunnelChart />
       </div>
 
-      <div className="md:row-start-3 md:col-start-3 md:col-span-2">
+      <div className="md:row-start-3 md:col-start-3 md:col-span-2 border-1 border-solid border-[#F3F4F6FF] rounded-sm">
         <DoughnutChart />
       </div>
 
-      <div className="md:row-start-4 md:col-start-1 md:col-span-4 bg-green-200"></div>
+      <div className="md:row-start-4 md:col-start-1 md:col-span-4 border-1 border-solid border-[#F3F4F6FF] rounded-sm">
+        <ComparisonBarChart />
+      </div>
 
       <div className="md:row-start-5 md:col-start-1 md:col-span-2 bg-green-200"></div>
 

@@ -37,8 +37,8 @@ export default function DoughnutChart() {
           Opportunity Stage
         </p>
       </div>
-      <div className="flex flex-wrap justify-center md:flex-nowrap md:justify-start">
-        <div className="w-[60%] flex min-w-[150px]">
+      <div className="flex flex-wrap justify-center md:flex-nowrap md:justify-start gap-6">
+        <div className="w-[50%] flex min-w-[150px] h-[220px] justify-center">
           <Doughnut
             data={data}
             options={{
@@ -51,7 +51,7 @@ export default function DoughnutChart() {
         </div>
 
         {/* Custom Legend */}
-        <div className="space-y-6 text-sm w-[40%] min-w-[100px]">
+        <div className="space-y-6 text-sm w-[50%] min-w-[100px]">
           {chartData.map((d, i) => (
             <div key={i} className="flex items-center justify-between">
               <span className="flex items-center space-x-2">
