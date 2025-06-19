@@ -20,7 +20,7 @@ export default function RootLayout({
             <Header />
           </div>
 
-          <main className="sm:row-start-2 sm:col-start-2 sm:row-span-1 overflow-y-auto p-4">
+          <main className="sm:row-start-2 sm:col-start-2 sm:row-span-1 overflow-y-auto p-8">
             {children}
           </main>
         </div>
