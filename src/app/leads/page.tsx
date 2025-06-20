@@ -47,7 +47,7 @@ export default function Leads() {
         </div>
       </div>
       <div className="mt-5 flex gap-5 w-auto justify-center-safe">
-        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5 pb-5">
           <div className="w-full bg-[#4B7BECFF] text-white text-sm flex p-3 justify-between items-center">
             <p className="font-bold">New</p>
             <div>
@@ -60,7 +60,7 @@ export default function Leads() {
           ))}
         </div>
 
-        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5 pb-5">
           <div className="w-full bg-[#f3b919] text-white text-sm flex p-3 justify-between items-center">
             <p className="font-bold">Proposals</p>
             <div>
@@ -72,7 +72,7 @@ export default function Leads() {
           ))}
         </div>
 
-        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5 pb-5">
           <div className="w-full bg-[#6f66eb] text-white text-sm flex p-3 justify-between items-center">
             <p className="font-bold">Negotiations</p>
             <div>
@@ -84,7 +84,7 @@ export default function Leads() {
           ))}
         </div>
 
-        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5 pb-5">
           <div className="w-full bg-[#f98385] text-white text-sm flex p-3 justify-between items-center">
             <p className="font-bold">Contract Sent</p>
             <div>
@@ -95,7 +95,7 @@ export default function Leads() {
             <Card key={deal.id} deal={deal} />
           ))}
         </div>
-        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5 pb-5">
           <div className="w-full bg-[#59aa39] text-white text-sm flex p-3 justify-between items-center">
             <p className="font-bold">Deal Completed</p>
             <div>
