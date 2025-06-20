@@ -46,7 +46,7 @@ export default function Leads() {
           </div>
         </div>
       </div>
-      <div className="h-full mt-5 flex gap-5 w-auto justify-center-safe">
+      <div className="mt-5 flex gap-5 w-auto justify-center-safe">
         <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
           <div className="w-full bg-[#4B7BECFF] text-white text-sm flex p-3 justify-between items-center">
             <p className="font-bold">New</p>

@@ -1,4 +1,5 @@
 import { Deal } from "@/types/Deal";
+import clsx from "clsx";
 import {
   CalendarCheck2,
   CircleDollarSign,
@@ -14,13 +15,20 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ deal }) => {
   return (
-    <div className="w-[90%] h-[180px] bg-white rounded-md p-3 cursor-pointer flex flex-col gap-3">
+    <div className="w-[90%] min-h-[180px] bg-white rounded-md p-3 cursor-pointer flex flex-col gap-3 hover:bg-blue-50">
       <div className="flex text-[11px] justify-between">
         <div className="flex gap-2 font-[350]">
           <div className="bg-[#F1F8FDFF] text-[#379AE6FF] px-2 py-1 flex justify-center rounded-xl hover:bg-[#ACD5F5FF] ">
             <p>{deal.type}</p>
           </div>
-          <div className="bg-[#FDF2F2FF] text-[#DE3B40FF] px-2 py-1 flex justify-center rounded-xl hover:bg-[#F5C4C6FF]">
+          <div
+            className={clsx(
+              "bg-[#FDF2F2FF] text-[#DE3B40FF] px-2 py-1 flex justify-center rounded-xl hover:bg-[#F5C4C6FF]",
+              deal.tag == "New"
+                ? "bg-[#e6f1e6] text-green-700 hover:bg-[#b6cab6]"
+                : null
+            )}
+          >
             <p>{deal.tag}</p>
           </div>
         </div>
