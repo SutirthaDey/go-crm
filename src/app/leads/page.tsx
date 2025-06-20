@@ -46,7 +46,7 @@ export default function Leads() {
           </div>
         </div>
       </div>
-      <div className="h-full w-screen mt-5 flex gap-5">
+      <div className="h-full mt-5 flex gap-5 w-auto justify-center-safe">
         <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
           <div className="w-full bg-[#4B7BECFF] text-white text-sm flex p-3 justify-between items-center">
             <p className="font-bold">New</p>
@@ -73,7 +73,7 @@ export default function Leads() {
         </div>
 
         <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
-          <div className="w-full bg-[#59aa39] text-white text-sm flex p-3 justify-between items-center">
+          <div className="w-full bg-[#6f66eb] text-white text-sm flex p-3 justify-between items-center">
             <p className="font-bold">Negotiations</p>
             <div>
               <p className="text-xs font-[400]">{3} deals ~ $6,400</p>
@@ -92,6 +92,17 @@ export default function Leads() {
             </div>
           </div>
           {contractSentData.map((deal) => (
+            <Card key={deal.id} deal={deal} />
+          ))}
+        </div>
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+          <div className="w-full bg-[#59aa39] text-white text-sm flex p-3 justify-between items-center">
+            <p className="font-bold">Deal Completed</p>
+            <div>
+              <p className="text-xs font-[400]">{4} deals ~ $6,000</p>
+            </div>
+          </div>
+          {negotiationData.map((deal) => (
             <Card key={deal.id} deal={deal} />
           ))}
         </div>
