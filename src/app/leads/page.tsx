@@ -1,5 +1,10 @@
 import { ChevronDown, Funnel, LayoutPanelLeftIcon, List } from "lucide-react";
 import { epilogue } from "@/ui/fonts";
+import Card from "@/components/Leads/card";
+import { newDeals } from "@/data/NewDeal";
+import { proposalData } from "@/data/ProposalData";
+import { negotiationData } from "@/data/NegotiationData";
+import { contractSentData } from "@/data/ContractSentData";
 
 export default function Leads() {
   return (
@@ -41,7 +46,56 @@ export default function Leads() {
           </div>
         </div>
       </div>
-      <div className="bg-pink-50 h-full overflow-auto">C</div>
+      <div className="h-full w-screen mt-5 flex gap-5">
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+          <div className="w-full bg-[#4B7BECFF] text-white text-sm flex p-3 justify-between items-center">
+            <p className="font-bold">New</p>
+            <div>
+              <p className="text-xs font-[400]">{5} deals ~ $56,000</p>
+            </div>
+          </div>
+
+          {newDeals.map((deal) => (
+            <Card key={deal.id} deal={deal} />
+          ))}
+        </div>
+
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+          <div className="w-full bg-[#f3b919] text-white text-sm flex p-3 justify-between items-center">
+            <p className="font-bold">Proposals</p>
+            <div>
+              <p className="text-xs font-[400]">{3} deals ~ $6,000</p>
+            </div>
+          </div>
+          {proposalData.map((deal) => (
+            <Card key={deal.id} deal={deal} />
+          ))}
+        </div>
+
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+          <div className="w-full bg-[#59aa39] text-white text-sm flex p-3 justify-between items-center">
+            <p className="font-bold">Negotiations</p>
+            <div>
+              <p className="text-xs font-[400]">{3} deals ~ $6,400</p>
+            </div>
+          </div>
+          {negotiationData.map((deal) => (
+            <Card key={deal.id} deal={deal} />
+          ))}
+        </div>
+
+        <div className="min-w-[280px] bg-[#FAFAFBFF] rounded-sm flex flex-col items-center gap-5">
+          <div className="w-full bg-[#f98385] text-white text-sm flex p-3 justify-between items-center">
+            <p className="font-bold">Contract Sent</p>
+            <div>
+              <p className="text-xs font-[400]">{4} deals ~ $6,000</p>
+            </div>
+          </div>
+          {contractSentData.map((deal) => (
+            <Card key={deal.id} deal={deal} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
