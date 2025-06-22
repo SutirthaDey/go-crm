@@ -1,6 +1,6 @@
 import { ChevronDown, Funnel, LayoutPanelLeftIcon, List } from "lucide-react";
 import { epilogue } from "@/ui/fonts";
-import Card from "@/components/Leads/card";
+import Card from "@/components/Leads/Card";
 import { newDeals } from "@/data/NewDeal";
 import { proposalData } from "@/data/ProposalData";
 import { negotiationData } from "@/data/NegotiationData";

@@ -1,15 +1,15 @@
 "use client";
 
+import Stages from "@/components/Leads/Stages";
+import Tabs from "@/components/Leads/Tabs";
+import Title from "@/components/Leads/Title";
 import { epilogue } from "@/ui/fonts";
-import {
-  Ban,
-  Check,
-  ChevronRight,
-  CircleCheckBig,
-  EllipsisVertical,
-} from "lucide-react";
+import { Ban, CircleCheckBig, EllipsisVertical } from "lucide-react";
+import { useState } from "react";
 
 export default function LeadDetails() {
+  const [activeTab, setActiveTab] = useState(1);
+
   return (
     <div className="h-screen">
       <div className="flex justify-between flex-wrap">
@@ -31,67 +31,12 @@ export default function LeadDetails() {
             <EllipsisVertical height={14} width={14} />
           </div>
         </div>
+        <Stages />
       </div>
 
-      <div className="h-20 mt-2 p-4 border-1 border-solid border-gray-100 flex items-center overflow-auto">
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-2">
-            <div className="h-7 min-w-7 bg-[#1DD75BFF] rounded-full text-white flex justify-center items-center">
-              <Check height={18} width={18} />
-            </div>
-            <p className="text-[#171A1FFF] text-sm">New Lead</p>
-          </div>
-          <ChevronRight height={16} width={16} color="gray" />
-          <div className="flex items-center gap-2">
-            <div className="h-7 min-w-7 bg-[#1DD75BFF] rounded-full text-white flex justify-center items-center">
-              <Check height={18} width={18} />
-            </div>
-            <p className="text-[#171A1FFF] text-sm">Proposal</p>
-          </div>
-          <ChevronRight height={16} width={16} color="gray" />
+      <Title />
 
-          <div className="flex items-center gap-2">
-            <div className="h-7 min-w-7 bg-[#4B7BECFF] rounded-full text-white flex justify-center items-center">
-              3
-            </div>
-            <p className="text-[#171A1FFF] text-sm">Negotiation</p>
-          </div>
-          <ChevronRight height={16} width={16} color="gray" />
-
-          <div className="flex items-center gap-2">
-            <div className="h-7 min-w-7 bg-[#F3F4F6FF] text-[#565E6CFF] rounded-full flex justify-center items-center">
-              4
-            </div>
-            <p className="text-[#565E6CFF] text-sm">Contract Sent</p>
-          </div>
-          <ChevronRight height={16} width={16} color="gray" />
-          <div className="flex items-center gap-2">
-            <div className="h-7 min-w-7 bg-[#F3F4F6FF] text-[#565E6CFF] rounded-full flex justify-center items-center">
-              5
-            </div>
-            <p className="text-[#565E6CFF] text-sm">Close</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="min-h-22 mt-4 p-6 bg-amber-50 flex items-center gap-6 flex-wrap">
-        <div className="flex gap-2 text-[#171A1FFF] text-sm flex-col min-w-48">
-          <p className="font-[350]">Title</p>
-          <p className="font-[600]">Sint Proident adipisicing</p>
-        </div>
-        <div className="flex gap-2 text-[#171A1FFF] text-sm flex-col min-w-48">
-          <p className="font-[350]">Est Revenue</p>
-          <p className="font-[600]">$2,000</p>
-        </div>
-        <div className="flex gap-2 text-[#171A1FFF] text-sm flex-col min-w-48">
-          <p className="font-[350]">Product</p>
-          <p className="font-[600]">100 Licences</p>
-        </div>
-        <div className="flex gap-2 text-[#171A1FFF] text-sm flex-col min-w-48">
-          <p className="font-[350]">Est. Close Date</p>
-          <p className="font-[600]">Oct 10, 2025</p>
-        </div>
-      </div>
+      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
   );
 }
