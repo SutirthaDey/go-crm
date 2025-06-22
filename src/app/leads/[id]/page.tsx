@@ -31,8 +31,9 @@ export default function LeadDetails() {
             <EllipsisVertical height={14} width={14} />
           </div>
         </div>
-        <Stages />
       </div>
+
+      <Stages />
 
       <Title />
 
