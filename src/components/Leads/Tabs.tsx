@@ -27,7 +27,7 @@ const Tabs: React.FC<TabsProps> = ({ activeTab, setActiveTab }) => {
               className={clsx(
                 "flex items-center gap-2 p-4 text-sm border-b-2",
                 isActive
-                  ? "border-blue-600 text-blue-600"
+                  ? "border-blue-600 text-blue-600 font-[500]"
                   : "border-transparent text-[#565E6CFF]"
               )}
             >
