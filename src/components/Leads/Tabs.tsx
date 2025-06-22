@@ -17,21 +17,24 @@ interface TabsProps {
 const Tabs: React.FC<TabsProps> = ({ activeTab, setActiveTab }) => {
   return (
     <div className="h-20 mt-2 border-b-1 border-solid border-gray-100 flex items-end overflow-auto">
-      <div className="flex items-center justify-center gap-5 cursor-pointer">
-        {tabs.map((tab) => (
-          <div
-            className={clsx(
-              "flex items-center gap-2 p-4 box text-sm",
-              tab.id === activeTab
-                ? "border-b-2 border-blue-600 bg-white text-blue-600"
-                : "border-b-2 border-transparent text-[#565E6CFF] "
-            )}
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            <p>{tab.name}</p>
-          </div>
-        ))}
+      <div className="flex items-center  gap-5 cursor-pointer">
+        {tabs.map((tab) => {
+          const isActive = tab.id === activeTab;
+          return (
+            <div
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 p-4 text-sm border-b-2",
+                isActive
+                  ? "border-blue-600 text-blue-600"
+                  : "border-transparent text-[#565E6CFF]"
+              )}
+            >
+              <p className="leading-none">{tab.name}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
